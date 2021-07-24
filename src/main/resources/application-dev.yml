@@ -1,15 +1,5 @@
 server:
   port: 8081
-spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    virtual-host: /
-    username: guest
-    password: guest
-    publisher-confirms: true #消息发送到交换器确认
-    publisher-returns: true #消息发送到队列确认
-
 mqtt:
   username: guest                            # 账号
   password: guest                        # 密码

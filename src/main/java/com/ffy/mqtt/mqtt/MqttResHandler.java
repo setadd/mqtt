@@ -13,6 +13,7 @@ public class MqttResHandler {
 
 
     public void deal(Message msg){
+        //根据messageId判断是否是本机发送的消息
         Long msgId = msg.getMessageId();
         if(DefaultFuture.contains(msgId)){
             DefaultFuture.received(msg);

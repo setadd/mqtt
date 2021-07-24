@@ -126,6 +126,7 @@ public class MqttReceiverConfig {
             @Override
             public void handleMessage(Message<?> message) throws MessagingException {
                 String topic = message.getHeaders().get("mqtt_receivedTopic").toString();
+
                 if(topic.equals(Constant.MQTT_TOPIC_RES)){
                     String msg = message.getPayload().toString();
                     mqttResHandler.deal(JSONUtil.toBean(msg,com.ffy.mqtt.model.Message.class));

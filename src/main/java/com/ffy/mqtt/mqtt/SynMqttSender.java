@@ -16,7 +16,7 @@ public class SynMqttSender {
         Long msgId = DefaultFuture.generateId();
         msg.setMessageId(msgId);
         iMqttSender.sendToMqtt(Constant.MQTT_TOPIC_REQ,1, JSONUtil.toJsonStr(msg));
-        DefaultFuture future = new DefaultFuture(msg.getMessageId(),10);
+        DefaultFuture future = new DefaultFuture(msg.getMessageId(),30);
         return future;
     }
 }
