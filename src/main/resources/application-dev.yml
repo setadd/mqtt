@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  context-path: /demo
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+    publisher-confirms: true #消息发送到交换器确认
+    publisher-returns: true #消息发送到队列确认
+
+mqtt:
+  username: guest                            # 账号
+  password: guest                        # 密码
+  url: tcp://127.0.0.1:1883                    # mqtt连接tcp地址
+  clientId: test                            # 客户端Id，每个启动的id要不同
+  defaultTopic: test                        # 默认主题
+  timeout: 100                            # 超时时间
+  keepalive: 100                          # 保持连接数
+  willData: 100                          #遗嘱”消息
+  completionTimeout: 20
+  receiver:
+    clientId: receiver
+    defaultTopic: /mqtt/#

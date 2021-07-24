@@ -1,0 +1,16 @@
+server:
+  port: 8081
+netty:
+  port: 16879
+spring:
+  #redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      maxActive: 24
+      maxWait: -1
+      maxIdle: 10
+      minIdle: 0
