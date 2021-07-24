@@ -11,15 +11,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class MqttResHandler {
 
-    @Autowired
-    SimpleSender simpleSender;
 
     public void deal(Message msg){
         Long msgId = msg.getMessageId();
         if(DefaultFuture.contains(msgId)){
             DefaultFuture.received(msg);
-        }else{
-            simpleSender.send(JSONUtil.toJsonStr(msg));
         }
     }
 }

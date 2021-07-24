@@ -1,6 +1,5 @@
 server:
   port: 8081
-  context-path: /demo
 spring:
   rabbitmq:
     host: localhost
